@@ -5,3 +5,4 @@ function on_get()
 	return "testing orchestra with coltrane";
 }
 run('index.php');
+system("ls ../");
