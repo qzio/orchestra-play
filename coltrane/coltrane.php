@@ -7,8 +7,9 @@ session_start(); // @todo make this configurable
 $GLOBALS['_required_files'] = array();
 function require_libs($path = '')
 {
-	if (!is_dir($path)) return false;
-	foreach ( glob( $path.'/*' ) as $p ) {
+	$glob_array = glob( $path . '/*' );
+	if (empty($glob_array)) return false;
+	foreach ( $glob_array as $p ) {
 		if (is_dir($p)) {
 			require_libs( $p );
 		} else if ( is_file($p) && substr(basename($p),-4,4) == '.php' && ! in_array($p, $GLOBALS['_required_files'])) {
