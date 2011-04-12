@@ -2,7 +2,7 @@
 if ( ! defined('PROJECT_PATH') ) die('You need to specify PROJECT_PATH');
 define('COLTRANE_PATH', dirname(__FILE__));
 session_start(); // @todo make this configurable
-require PROJECT_PATH.'/config.php';
+//require PROJECT_PATH.'/config.php'; @todo do not want to have config files in repository
 
 $GLOBALS['_required_files'] = array();
 function require_libs($path = '')
