@@ -1,8 +1,8 @@
 <?php
 require dirname(__FILE__) . '/../bootstrap.php';
-function on_get()
+function on_get( $params = array() )
 {
-	return "testing orchestra with coltrane";
+	$params['title'] = 'Coltrane demo';
+	return template('index.php', $params);
 }
 run('index.php');
-system("ls ../");
